@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* #090C0D */
+
+/* header */
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color:#090C0D;
+}
+
+.nav-item a {
+    color: #ffffff;
+}
+
+.nav-item a:hover {
+    color: #0585EB;
+}
+
+.main {
+    background-color: #e0e0e0;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding-bottom: 0.1%;
+    padding-top: 1;
+}
+
+/*article {
+    text-align: justify;
+}*/
+
+footer {
+    background-color:#090C0D;
+    color: #ffffff;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+h5 {
+    text-align: center;
+}
+
+footer a {
+    color: #0585EB;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+

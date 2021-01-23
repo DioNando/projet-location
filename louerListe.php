@@ -27,7 +27,7 @@
                 </article>
 
                 <article class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
-                    <h4><a href="#">Liste</a></h4>
+                    <h4><a href="#">Liste des locations</a></h4>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore non nesciunt nam dignissimos
                         officiis rem aspernatur esse nostrum aperiam dicta beatae dolores, libero veniam, dolorum iste
