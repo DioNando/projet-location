@@ -24,7 +24,14 @@ a {
     margin-top: 1%;
     margin-bottom: 1%;
     padding-bottom: 0.1%;
-    padding-top: 1;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.formulaire {
+    color: white;
+    padding-top: 3%;
+    padding-bottom: 5%;
 }
 
 /*article {
