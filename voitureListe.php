@@ -20,18 +20,18 @@
                 <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
                     <h4><a href="#">Nouveau</a></h4>
                     <div class="container-fluid bg-dark formulaire">
-                        <form>
+                        <form action="voiture_post.php" method="POST">
                             <div class="mb-2">
                                 <label for="exampleInputID1" class="form-label">Numéro voiture</label>
-                                <input type="number" class="form-control" id="exampleInputID1">
+                                <input type="text" class="form-control" id="exampleInputID1" name="Voiture">
                             </div>
                             <div class="mb-2">
                                 <label for="exampleInputName1" class="form-label">Désignation</label>
-                                <input type="text" class="form-control" id="exampleInputName1">
+                                <input type="text" class="form-control" id="exampleInputName1" name="Designation">
                             </div>
                             <div class="mb-2">
                                 <label for="exampleInputAdress1" class="form-label">Loyer journalier</label>
-                                <input type="number" class="form-control" id="exampleInputAdress1">
+                                <input type="number" class="form-control" id="exampleInputAdress1" name="Loyer_Journalier">
                             </div>
 
                             <div class="d-grid gap-2 mt-4">
@@ -49,96 +49,37 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Voiture</th>
+                                <!--<th scope="col">Voiture</th>-->
                                 <th scope="col">Désignation</th>
                                 <th scope="col">Loyer journalier</th>
                                 <th scope="col">Modifier/Effacer</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>voit</td>
-                                <td>Tesla serie Y</td>
-                                <td>3100</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>voit</td>
-                                <td>Audi A8</td>
-                                <td>2700</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>voit</td>
-                                <td>Ford Raptor</td>
-                                <td>1500</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>voit</td>
-                                <td>BMW X5</td>
-                                <td>1750</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>voit</td>
-                                <td>Citroen DS5</td>
-                                <td>1100</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
+                             <?php 
 
+                                $reponse = $bdd->query('SELECT * FROM table_voiture');
 
-                            
+                                while ($donnees = $reponse->fetch())
+                                {
+                                    echo '<tr><th scope="row">' . htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) . '</th>';
+                                    /*echo '<td>' . htmlspecialchars($donnees['Voiture']) . '</td>';*/
+                                    echo '<td>' . htmlspecialchars($donnees['Designation']) . '</td>';  
+                                    echo '<td>' . htmlspecialchars($donnees['Loyer']) . '</td>'; 
+                                    echo '<td>
+                                    <center>
+                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                            <button type="button" class="btn btn-primary"><img
+                                                    src="icons/pencil-fill.svg" alt=""></button>
+                                            <button type="button" class="btn btn-secondary"><img
+                                                    src="icons/eraser-fill.svg" alt=""></button>
+                                        </div>
+                                    </center>
+                                </td></tr>';    
+                                }
+
+                                $reponse->closeCursor();
+                            ?>                            
                         </tbody>
                     </table>
                 </article>
@@ -146,7 +87,7 @@
         </div>
     </div>
 
-    <?php include("footer.php"); ?>
+    <?php /* include("footer.php"); */?>
 
 </body>
 

@@ -20,18 +20,20 @@
                 <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
                     <h4><a href="#">Nouveau</a></h4>
                     <div class="container-fluid bg-dark formulaire">
-                        <form>
+
+
+                        <form action="locataire_post.php" method="POST">
                             <div class="mb-2">
                                 <label for="exampleInputID1" class="form-label">Numéro locataire</label>
-                                <input type="number" class="form-control" id="exampleInputID1">
+                                <input type="text" class="form-control" id="exampleInputID1" name="Locataire">
                             </div>
                             <div class="mb-2">
                                 <label for="exampleInputName1" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="exampleInputName1">
+                                <input type="text" class="form-control" id="exampleInputName1" name="Nom">
                             </div>
                             <div class="mb-2">
                                 <label for="exampleInputAdress1" class="form-label">Adresse</label>
-                                <input type="text" class="form-control" id="exampleInputAdress1">
+                                <input type="text" class="form-control" id="exampleInputAdress1" name="Adresse">
                             </div>
 
                             <div class="d-grid gap-2 mt-4">
@@ -50,61 +52,38 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Locataire</th>
+                                <!--<th scope="col">Locataire</th>-->
                                 <th scope="col">Nom</th>
                                 <th scope="col">Adresse</th>
                                 <th scope="col">Modifier/Effacer</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>loc</td>
-                                <td>Otto</td>
-                                <td>15 A</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>loc</td>
-                                <td>Thornton</td>
-                                <td>Lot F-12</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>loc</td>
-                                <td>Will</td>
-                                <td>BIS 32</td>
-                                <td>
-                                    <center>
-                                        <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img src="icons/pencil-fill.svg"
-                                                    alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="icons/eraser-fill.svg" alt=""></button>
-                                        </div>
-                                    </center>
-                                </td>
-                            </tr>
+                            <?php 
+
+                                $reponse = $bdd->query('SELECT * FROM table_locataire');
+
+                                    while ($donnees = $reponse->fetch())
+                                    {
+                                        echo '<tr><th scope="row">' . htmlspecialchars($donnees['Locataire']) . ' ' . htmlspecialchars($donnees['ID_Locataire']) . '</th>';
+                                        /*echo '<td>' . htmlspecialchars($donnees['Locataire']) . '</td>';*/
+                                        echo '<td>' . htmlspecialchars($donnees['Nom']) . '</td>';  
+                                        echo '<td>' . htmlspecialchars($donnees['Adresse']) . '</td>'; 
+                                        echo '<td>
+                                        <center>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <button type="button" class="btn btn-primary"><img
+                                                        src="icons/pencil-fill.svg" alt=""></button>
+                                                <button type="button" class="btn btn-secondary"><img
+                                                        src="icons/eraser-fill.svg" alt=""></button>
+                                            </div>
+                                        </center>
+                                    </td></tr>';    
+                                    }
+
+                                    $reponse->closeCursor();
+                            ?>
+
                         </tbody>
                     </table>
                 </article>
@@ -112,7 +91,7 @@
         </div>
     </div>
 
-    <?php include("footer.php"); ?>
+    <?php /* include("footer.php"); */?>
 
 </body>
 
