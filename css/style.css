@@ -3,12 +3,44 @@
 
 /* header */
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('../font/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../font/Open_Sans.zip');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../font/Oswald-VariableFont_wght.ttf');
+}
+
+body {
+    font-family: 'Open Sans';
+}
+
 a {
     text-decoration: none;
 }
 
+h4 {
+    font-family: 'Oswald';
+    font-size: 22px;
+}
+
+table thead th{
+    font-family: 'Open Sans';
+    font-size: 17px;
+    text-align: center;
+}
+
 .header {
     background-color:#090C0D;
+    font-family: 'Oswald';
+    font-size: 22px;
 }
 
 .nav-item a {
@@ -34,15 +66,13 @@ a {
     padding-bottom: 5%;
 }
 
-/*article {
-    text-align: justify;
-}*/
-
 footer {
     background-color:#090C0D;
     color: #ffffff;
     padding-top: 1%;
     padding-bottom: 1%;
+    font-family: 'Oswald';
+    font-size: 22px;
 }
 
 h5 {
