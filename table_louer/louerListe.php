@@ -98,7 +98,16 @@
                         <tbody class="align-middle">
                             <?php 
 
-                            $reponse = $bdd->query('SELECT * FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture)');
+                            if (isset($_POST['search'])) {
+                                $searchkey = $_POST['search'];
+                                $sql = "SELECT * FROM table_locataire, table_voiture, table_louer 
+                                    WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
+                                    (CONCAT(Locataire, ' ',table_louer.ID_Locataire) LIKE '%$searchkey%' OR CONCAT(Voiture, ' ', table_louer.ID_Voiture) LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%')";
+                            }else{
+                                $sql = "SELECT * FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture)";
+                            }
+
+                            $reponse = $bdd->query($sql);
 
                                 while ($donnees = $reponse->fetch())
                                 {
@@ -131,5 +140,8 @@
 
 
 </body>
+<script src="../jquery/jquery.min.js"></script>
+<script src="recherche.js"></script>
+
 
 </html>

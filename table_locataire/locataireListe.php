@@ -51,8 +51,7 @@
                     <table class="table table-hover table-dark table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Identifiant</th>
-                                <!--<th scope="col">Locataire</th>-->
+                                <th scope="col">Identifiant</th>                   
                                 <th scope="col">Nom</th>
                                 <th scope="col">Adresse</th>
                                 <th scope="col">Actions</th>
@@ -61,12 +60,18 @@
                         <tbody class="align-middle">
                             <?php 
 
-                                $reponse = $bdd->query('SELECT * FROM table_locataire');
+                                if (isset($_POST['search'])) {
+                                    $searchkey = $_POST['search'];
+                                    $sql = "SELECT * FROM table_locataire WHERE CONCAT(Locataire, ' ', ID_Locataire) LIKE '%$searchkey%' OR Nom LIKE '%$searchkey%' OR Adresse LIKE '%$searchkey%'"; 
+                                }else{
+                                    $sql = "SELECT * FROM table_locataire";
+                                }
+
+                                $reponse = $bdd->query($sql);
 
                                     while ($donnees = $reponse->fetch())
                                     {
                                         echo '<tr><th scope="row">' . htmlspecialchars($donnees['Locataire']) . ' ' . htmlspecialchars($donnees['ID_Locataire']) . '</th>';
-                                        /*echo '<td>' . htmlspecialchars($donnees['Locataire']) . '</td>';*/
                                         echo '<td>' . htmlspecialchars($donnees['Nom']) . '</td>';  
                                         echo '<td>' . htmlspecialchars($donnees['Adresse']) . '</td>'; 
                                         echo '<td>
@@ -92,5 +97,8 @@
     </div>
 
 </body>
+
+<script src="../jquery/jquery.min.js"></script>
+<script src="recherche.js"></script>
 
 </html>

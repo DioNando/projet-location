@@ -34,7 +34,22 @@
                         <tbody class="align-middle">
                             <?php 
 
-                            $reponse = $bdd->query('SELECT *, (Loyer*NbJour) AS Montant FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) ORDER BY Date_Location DESC');
+                            if (isset($_POST['search'])) {
+                                $searchkey = $_POST['search'];
+                                $sql = "SELECT *, (Loyer*NbJour) AS Montant FROM table_locataire, table_voiture, table_louer 
+                                    WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
+                                    (Nom LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%') ORDER BY Date_Location DESC";
+                                
+                                $somme = $bdd->query("SELECT SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer
+                                    WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
+                                    (Nom LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%')");
+                            }else{
+                                $sql = "SELECT *, (Loyer*NbJour) AS Montant FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) ORDER BY Date_Location DESC";
+                            
+                                $somme = $bdd->query('SELECT SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture)');
+                            }
+
+                            $reponse = $bdd->query($sql);
 
                                 while ($donnees = $reponse->fetch())
                                 {
@@ -42,19 +57,16 @@
                                     echo '<td>' . htmlspecialchars($donnees['Date_Location']) . '</td>';
                                     echo '<td>' . htmlspecialchars($donnees['Loyer']) . '</td>';
                                     echo '<td>' . htmlspecialchars($donnees['NbJour']) . '</td>';  
-                                    echo '<td>' . htmlspecialchars($donnees['Montant']) . '</td></tr>';  
-                                    
+                                    echo '<td>' . htmlspecialchars($donnees['Montant']) . '</td></tr>';                                      
                                 }
-                                $reponse->closeCursor();
 
-                                $reponse = $bdd->query('SELECT SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture)');
-
-                                while ($donnees = $reponse->fetch()) {
+                                while ($donnees = $somme->fetch()) {
                                     echo '<tr class="bg-light">
                                     <th colspan="4">TOTAL</th>
-                                    <th>' . htmlspecialchars($donnees['Total']). '</th></tr>';
-                                }                              
-                                
+                                    <th>' . $donnees['Total']. '</th></tr>';
+                                }   
+
+                                $somme->closeCursor();
                                 $reponse->closeCursor();
                             ?>
                             

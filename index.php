@@ -46,7 +46,7 @@
             </div>
             <div class="row">
                 <article class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                    <h4><a href="#">Titre 1</a></h4>
+                    <h4><a href="#">Titre 4</a></h4>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore non nesciunt nam dignissimos
                         officiis rem aspernatur esse nostrum aperiam dicta beatae dolores, libero veniam, dolorum iste

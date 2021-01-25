@@ -57,7 +57,14 @@
                         <tbody class="align-middle">
                              <?php 
 
-                                $reponse = $bdd->query('SELECT * FROM table_voiture');
+                                if (isset($_POST['search'])) {
+                                    $searchkey = $_POST['search'];
+                                    $sql = "SELECT * FROM table_voiture WHERE CONCAT(Voiture,' ', ID_Voiture) LIKE '%$searchkey%' OR Designation LIKE '%$searchkey%' OR Loyer LIKE '%$searchkey%'";
+                                }else{
+                                    $sql = "SELECT * FROM table_voiture";
+                                }
+
+                                $reponse = $bdd->query($sql);
 
                                 while ($donnees = $reponse->fetch())
                                 {
@@ -88,5 +95,7 @@
 
 
 </body>
+<script src="../jquery/jquery.min.js"></script>
+<script src="recherche.js"></script>
 
 </html>
