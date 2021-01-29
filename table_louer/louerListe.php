@@ -29,7 +29,7 @@
 
                             <?php 
 
-                            $reponse = $bdd->query('SELECT * FROM table_locataire ORDER BY ID_Locataire DESC LIMIT 5');
+                            $reponse = $bdd->query('SELECT * FROM table_locataire ORDER BY ID_Locataire DESC LIMIT 10');
 
                                 while ($donnees = $reponse->fetch())
                                 {
@@ -85,7 +85,7 @@
                     <h4><a href="#">Liste des locations</a></h4>
                     <?php include("../recherche/recherche.php"); ?>
                     <!-- Tableau -->
-                    <table class="table table-hover table-dark table-striped">
+                    <table class="table table-hover table-dark table-striped" id="result">
                         <thead>
                             <tr>
                                 <th scope="col">Locataire</th>

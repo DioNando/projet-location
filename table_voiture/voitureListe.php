@@ -45,7 +45,7 @@
                 <article class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
                     <h4><a href="#">Liste des voitures</a></h4>
                     <?php include("../recherche/recherche.php"); ?>
-                    <table class="table table-hover table-dark table-striped">
+                    <table class="table table-hover table-dark table-striped" id="result">
                         <thead>
                             <tr>
                                 <th scope="col">Identification</th>                        
@@ -69,7 +69,7 @@
                                 while ($donnees = $reponse->fetch())
                                 {
                                     echo '<tr><th scope="row">' . htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) . '</th>';
-                                    /*echo '<td>' . htmlspecialchars($donnees['Voiture']) . '</td>';*/
+                                   
                                     echo '<td>' . htmlspecialchars($donnees['Designation']) . '</td>';  
                                     echo '<td>' . htmlspecialchars($donnees['Loyer']) . '</td>'; 
                                     echo '<td>

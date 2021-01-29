@@ -1,37 +1,14 @@
-<?php include("../connexion/connexion.php"); ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Location</title>
-</head>
-
-<body>
-    <?php include("header.php"); ?>
-
-    <div class="container-fluid">
-        <div class="container main">
-            <div class="row">
-                <article class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                <h4><a href="#">Effectif et Montant total des locations par voiture</a></h4>
-                    <?php include("../recherche/recherche.php"); ?>
-                    <!-- Tableau -->
-                    <table class="table table-hover table-dark table-striped" id="result">
-                        <thead>
-                            <tr>
-                                <th scope="col">Voiture</th>
-                                <th scope="col">Effectif</th>
-                                <th scope="col">Montant</th>                                
-                            </tr>
-                        </thead>
-                        <tbody class="align-middle">
-                            <?php 
-
+<table class="table table-hover table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Voiture</th>
+            <th scope="col">Effectif</th>
+            <th scope="col">Montant</th>
+        </tr>
+    </thead>
+    <tbody class="align-middle">
+        <?php 
+                            include_once('../connexion/connexion.php');
                             if (isset($_POST['search'])) {
                                 $searchkey = $_POST['search'];
                                 $sql = "SELECT *, COUNT(table_louer.ID_Locataire) AS Effectif, SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer 
@@ -54,21 +31,6 @@
                                
                                 $reponse->closeCursor();
                             ?>
-                            
-                        </tbody>
-                    </table>
-                </article>
 
-               
-            </div>
-        </div>
-    </div>
-
-    <?php include("footer.php"); ?>
-
-</body>
-
-<script src="../jquery/jquery.min.js"></script>
-<script src="rechercheVoiture.js"></script>
-
-</html>
+    </tbody>
+</table>

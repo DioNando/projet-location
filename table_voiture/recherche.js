@@ -4,7 +4,7 @@
       if (txt != '') 
       {
         $.ajax({
-              url:"voitureListe.php",
+              url:"rechVoiture.php",
               method:"POST",
               data:{search:txt},
               dataType:"text",
@@ -18,7 +18,7 @@
       {
         $('#result').html('');
         $.ajax({
-              url:"voitureListe.php",
+              url:"rechVoiture.php",
               method:"POST",
               data:{search:txt},
               dataType:"text",

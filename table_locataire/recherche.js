@@ -4,7 +4,7 @@
       if (txt != '') 
       {
         $.ajax({
-              url:"locataireListe.php",
+              url:"rechLocataire.php",
               method:"POST",
               data:{search:txt},
               dataType:"text",
@@ -18,7 +18,7 @@
       {
         $('#result').html('');
         $.ajax({
-              url:"locataireListe.php",
+              url:"rechLocataire.php",
               method:"POST",
               data:{search:txt},
               dataType:"text",

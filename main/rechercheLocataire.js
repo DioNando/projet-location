@@ -1,11 +1,11 @@
-  $(document).ready(function(){
+$(document).ready(function(){
     $('#search').keyup(function(){
       var txt = $(this).val();
       if (txt != '') 
       {
         $.ajax({
-              url:"rechLouer.php",
-              method:"post",
+              url:"rechercheLocataire.php",
+              method:"POST",
               data:{search:txt},
               dataType:"text",
               success:function(data)
@@ -18,8 +18,8 @@
       {
         $('#result').html('');
         $.ajax({
-              url:"rechLouer.php",
-              method:"post",
+              url:"rechercheLocataire.php",
+              method:"POST",
               data:{search:txt},
               dataType:"text",
               success:function(data)
