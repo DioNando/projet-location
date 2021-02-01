@@ -18,7 +18,7 @@
         <div class="container main">
             <div class="row">
                 <article class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                <h4><a href="#">Liste des locataires</a></h4>
+                <h4><a href="#">Liste des locataires</a></h4>    
                     <?php include("../recherche/recherche.php"); ?>
                     <!-- Tableau -->
                     <table class="table table-hover table-dark table-striped" id="result">
@@ -36,15 +36,15 @@
 
                             if (isset($_POST['search'])) {
                                 $searchkey = $_POST['search'];
-                                $sql = "SELECT *, (Loyer*NbJour) AS Montant FROM table_locataire, table_voiture, table_louer 
+                                $sql = "SELECT *, DATE_FORMAT(Date_Location, '%d %b %Y') AS Date_Location, (Loyer*NbJour) AS Montant FROM table_locataire, table_voiture, table_louer 
                                     WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
-                                    (Nom LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%') ORDER BY Date_Location DESC";
+                                    (Nom LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%') ORDER BY Nom";
                                 
                                 $total = $bdd->query("SELECT SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer
                                     WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
                                     (Nom LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%')");
-                            }else{
-                                $sql = "SELECT *, (Loyer*NbJour) AS Montant FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) ORDER BY Date_Location DESC";
+                                 }else{
+                                $sql = "SELECT *, DATE_FORMAT(Date_Location, '%d %b %Y') AS Date_Location, (Loyer*NbJour) AS Montant FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) ORDER BY Nom";
                             
                                 $total = $bdd->query('SELECT SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture)');
                             }

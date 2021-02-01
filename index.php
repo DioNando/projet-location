@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Location</title>
+    <title>Gestion des locations</title>
 </head>
 
 <body>
@@ -44,21 +44,28 @@
                     </p>     
                 </article>
             </div>
-            <div class="row">
-                <article class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                    <h4><a href="#">Titre 4</a></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore non nesciunt nam dignissimos
-                        officiis rem aspernatur esse nostrum aperiam dicta beatae dolores, libero veniam, dolorum iste
-                        dolor necessitatibus, doloribus ut.
-                    </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore explicabo pariatur corporis adipisci laboriosam, illo maiores asperiores doloremque aliquam vitae ipsam, iure vero debitis. Veniam quidem obcaecati vero quam laudantium?</p>
-                    
-                </article>
+
+            <div class="container">
+            <div class="row g-2">
+                <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+                </div>
+                <div class="col-6">
+                <div class="p-3 border bg-light">Custom column padding</div>
+                </div>
             </div>
+            </div>
+
+            
+
         </div>
     </div>
-
     <?php include("footer.php"); ?>
 
 </body>

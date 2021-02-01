@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Location</title>
+    <title>Voitures</title>
 </head>
 
 <body>
@@ -22,20 +22,20 @@
                     <div class="container-fluid bg-dark formulaire">
                         <form action="../traitement/voiture_post.php" method="POST">
                             <div class="mb-2">
-                                <label for="exampleInputID1" class="form-label">Numéro voiture</label>
-                                <input type="text" class="form-control" id="exampleInputID1" name="Voiture">
+                                <label for="inputVoiture" class="form-label">Numéro voiture</label>
+                                <input type="text" class="form-control" id="inputVoiture" name="Voiture">
                             </div>
                             <div class="mb-2">
-                                <label for="exampleInputName1" class="form-label">Désignation</label>
-                                <input type="text" class="form-control" id="exampleInputName1" name="Designation">
+                                <label for="inputDesignation" class="form-label">Désignation</label>
+                                <input type="text" class="form-control" id="inputDesignation" name="Designation">
                             </div>
                             <div class="mb-2">
-                                <label for="exampleInputAdress1" class="form-label">Loyer journalier</label>
-                                <input type="number" class="form-control" id="exampleInputAdress1" name="Loyer_Journalier">
+                                <label for="inputLoyer" class="form-label">Loyer journalier</label>
+                                <input type="number" class="form-control" id="inputLoyer" name="Loyer_Journalier">
                             </div>
 
                             <div class="d-grid gap-2 mt-4">
-                                <button type="submit" class="btn btn-primary">Valider</button>
+                                <button type="submit" class="btn btn-primary" id="btnSubmit">Valider</button>
                             </div>
                         </form>
 
@@ -68,20 +68,24 @@
 
                                 while ($donnees = $reponse->fetch())
                                 {
-                                    echo '<tr><th scope="row">' . htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) . '</th>';
+                            ?>
+                                    <tr>
+                                    <th scope="row"> <?php echo htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']); ?> </th>
                                    
-                                    echo '<td>' . htmlspecialchars($donnees['Designation']) . '</td>';  
-                                    echo '<td>' . htmlspecialchars($donnees['Loyer']) . '</td>'; 
-                                    echo '<td>
+                                    <td> <?php echo htmlspecialchars($donnees['Designation']); ?> </td>  
+                                    <td> <?php echo htmlspecialchars($donnees['Loyer']);  ?> </td> 
+                                    <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img
+                                            <button type="button" class="btn btn-primary" onclick="updateData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
                                             <button type="button" class="btn btn-secondary"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
-                                </td></tr>';    
+                                </td>
+                                </tr>
+                            <?php    
                                 }
 
                                 $reponse->closeCursor();
@@ -95,6 +99,17 @@
 
 
 </body>
+<script type="text/javascript">
+    function updateData(Voiture, Designation, Loyer)
+    {
+        document.getElementById('inputVoiture').value = Voiture;
+        document.getElementById('inputDesignation').value = Designation;
+        document.getElementById('inputLoyer').value = Loyer;
+        document.getElementById('btnSubmit').value = "Valider";
+    }
+
+</script>
+
 <script src="../jquery/jquery.min.js"></script>
 <script src="recherche.js"></script>
 

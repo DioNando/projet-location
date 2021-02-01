@@ -4,11 +4,6 @@
 /* header */
 
 @font-face {
-    font-family: 'Roboto';
-    src: url('../font/Roboto-Regular.ttf');
-}
-
-@font-face {
     font-family: 'Open Sans';
     src: url('../font/Open_Sans.zip');
 }
@@ -38,9 +33,13 @@ table thead th{
 }
 
 .header {
-    background-color:#090C0D;
+    background-color:#0585EB;
     font-family: 'Oswald';
     font-size: 22px;
+}
+
+.header h3 {
+    color: white;
 }
 
 .nav-item a {
@@ -48,7 +47,7 @@ table thead th{
 }
 
 .nav-item a:hover {
-    color: #0585EB;
+    color: #090C0D;
 }
 
 .main {
