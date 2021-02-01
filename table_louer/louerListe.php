@@ -19,12 +19,24 @@
             <div class="row">
                 <!-- Formulaire -->
                 <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                    <h4><a href="#">Nouveau</a></h4>
-                    <div class="container-fluid bg-dark formulaire">
+
+                <div class="accordion accordion-flush" id="accordionFlushLouer">
+                <div class="accordion-item">
+                    <h2 class="accordion-header bg-light" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <h4><a href="#">Nouveau</a></h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushLouer">
+                        <div class="accordion-body">
+
+                        <div class="container-fluid bg-dark formulaire">
                         <form action="../traitement/louer_post.php" method="POST">
                             
                             <div class="mb-2">
-                            <label for="exampleInputID1" class="form-label">Numéro locataire</label>
+                            <label for="#" class="form-label">Identifiant locataire</label>
                             <select class="form-select" aria-label="Default select example" name="ID_Locataire">
 
                             <?php 
@@ -45,7 +57,7 @@
                             </div>
 
                             <div class="mb-2">
-                                <label for="exampleInputID1" class="form-label">Numéro voiture</label>
+                                <label for="#" class="form-label">Identification voiture</label>
                                 <select class="form-select" aria-label="Default select example" name="ID_Voiture">
 
                             <?php 
@@ -65,20 +77,31 @@
                             </select>
                             </div>
                             <div class="mb-2">
-                                <label for="exampleInputName1" class="form-label">Nombre de jour</label>
-                                <input type="number" class="form-control" id="exampleInputName1" name="nb_Jour">
+                                <label for="#" class="form-label">Nombre de jour</label>
+                                <input type="number" class="form-control" id="#" name="nb_Jour">
                             </div>
                             <div class="mb-2">
-                                <label for="exampleInputAdress1" class="form-label">Date de location</label>
-                                <input type="date" class="form-control" id="exampleInputAdress1" name="date_Location">
+                                <label for="#" class="form-label">Date de location</label>
+                                <input type="date" class="form-control" id="#" name="date_Location">
                             </div>
 
                             <div class="d-grid gap-2 mt-4">
-                                <button type="submit" class="btn btn-primary">Valider</button>
+                                <button type="submit" class="btn btn-primary" id="#">Valider</button>
                             </div>
                         </form>
 
                     </div>
+                    
+                    
+                    </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+                    
+                    
                 </article>
                 <!-- Liste -->
                 <article class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
@@ -121,7 +144,8 @@
                                     <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary" onclick="updateData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalLouer" onclick="updateData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
                                             <button type="button" class="btn btn-secondary"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
@@ -145,20 +169,23 @@
 
 
 </body>
+
+<?php include("../modal/modalLouer.php"); ?>
+
 <script type="text/javascript">
     function updateData(Locataire, Voiture, NbJour, Date_Location)
     {
-        /*document.getElementById('inputLocataire').value = Locataire;
+        document.getElementById('inputLocataire').value = Locataire;
         document.getElementById('inputVoiture').value = Voiture;
         document.getElementById('inputNbJour').value = NbJour;
         document.getElementById('inputDate').value = Date_Location;
-        document.getElementById('btnSubmit').value = "Valider";*/
-        alert(Locataire+ ' ' + Voiture + ' ' + NbJour + ' ' + Date_Location);
+        document.getElementById('btnSubmit').value = "Valider";
+        
     }
-
 </script>
 
 <script src="../jquery/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="recherche.js"></script>
 
 

@@ -21,20 +21,25 @@
 
                                 while ($donnees = $reponse->fetch())
                                 {
-                                    echo '<tr><th scope="row">' . htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) . '</th>';
-                                    /*echo '<td>' . htmlspecialchars($donnees['Voiture']) . '</td>';*/
-                                    echo '<td>' . htmlspecialchars($donnees['Designation']) . '</td>';  
-                                    echo '<td>' . htmlspecialchars($donnees['Loyer']) . '</td>'; 
-                                    echo '<td>
+                            ?>
+                                    <tr>
+                                    <th scope="row"> <?php echo htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']); ?> </th>
+                                   
+                                    <td> <?php echo htmlspecialchars($donnees['Designation']); ?> </td>  
+                                    <td> <?php echo htmlspecialchars($donnees['Loyer']);  ?> </td> 
+                                    <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
                                             <button type="button" class="btn btn-secondary"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
-                                </td></tr>';    
+                                </td>
+                                </tr>
+                            <?php    
                                 }
 
                                 $reponse->closeCursor();

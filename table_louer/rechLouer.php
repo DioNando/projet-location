@@ -23,23 +23,29 @@
                             $reponse = $bdd->query($sql);
 
                                 while ($donnees = $reponse->fetch())
+
                                 {
-                                    echo '<tr><th scope="row">' . htmlspecialchars($donnees['Locataire']) . ' ' . htmlspecialchars($donnees['ID_Locataire']) . '</th>';
-                                    echo '<th scope="row">' . htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) . '</th>';
-                                    echo '<td>' . htmlspecialchars($donnees['NbJour']) . '</td>';  
-                                    echo '<td>' . htmlspecialchars($donnees['Date_Location']) . '</td>'; 
-                                    echo '<td>
+                            ?>
+                                    <tr>
+                                    <th scope="row"> <?php echo htmlspecialchars($donnees['Locataire']) . ' ' . htmlspecialchars($donnees['ID_Locataire']) ?> </th>
+                                    <th scope="row"> <?php echo htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) ?> </th>
+                                    <td> <?php echo htmlspecialchars($donnees['NbJour']) ?></td>  
+                                    <td> <?php echo htmlspecialchars($donnees['Date_Location']) ?> </td>
+                                    <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary"><img
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalLouer" onclick="updateData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
                                             <button type="button" class="btn btn-secondary"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
-                                    </td></tr>';    
+                                    </td>
+                                    </tr>  
+                                
+                            <?php
                                 }
-
                                 $reponse->closeCursor();
                             ?>
 

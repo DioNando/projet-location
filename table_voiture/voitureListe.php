@@ -18,28 +18,47 @@
         <div class="container main">
             <div class="row">
                 <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                    <h4><a href="#">Nouveau</a></h4>
-                    <div class="container-fluid bg-dark formulaire">
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header bg-light" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <h4><a href="#">Nouveau</a></h4>
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body"><div class="container-fluid bg-dark formulaire">
                         <form action="../traitement/voiture_post.php" method="POST">
                             <div class="mb-2">
-                                <label for="inputVoiture" class="form-label">Numéro voiture</label>
-                                <input type="text" class="form-control" id="inputVoiture" name="Voiture">
+                                <label for="#" class="form-label">Identification voiture</label>
+                                <input type="text" class="form-control" id="#" name="Voiture">
                             </div>
                             <div class="mb-2">
-                                <label for="inputDesignation" class="form-label">Désignation</label>
-                                <input type="text" class="form-control" id="inputDesignation" name="Designation">
+                                <label for="#" class="form-label">Désignation</label>
+                                <input type="text" class="form-control" id="#" name="Designation">
                             </div>
                             <div class="mb-2">
-                                <label for="inputLoyer" class="form-label">Loyer journalier</label>
-                                <input type="number" class="form-control" id="inputLoyer" name="Loyer_Journalier">
+                                <label for="#" class="form-label">Loyer journalier</label>
+                                <input type="number" class="form-control" id="#" name="Loyer_Journalier">
                             </div>
 
                             <div class="d-grid gap-2 mt-4">
-                                <button type="submit" class="btn btn-primary" id="btnSubmit">Valider</button>
+                                <button type="submit" class="btn btn-primary" id="#">Valider</button>
                             </div>
                         </form>
 
                     </div>
+                </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+                    
+                    
                 </article>
 
                 <article class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
@@ -77,7 +96,8 @@
                                     <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary" onclick="updateData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
                                             <button type="button" class="btn btn-secondary"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
@@ -99,6 +119,9 @@
 
 
 </body>
+
+<?php include("../modal/modalVoiture.php"); ?>
+
 <script type="text/javascript">
     function updateData(Voiture, Designation, Loyer)
     {
@@ -111,6 +134,7 @@
 </script>
 
 <script src="../jquery/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="recherche.js"></script>
 
 </html>
