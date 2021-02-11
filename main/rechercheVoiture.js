@@ -4,11 +4,11 @@ $(document).ready(function(){
       if (txt != '') 
       {
         $.ajax({
-              url:"rechercheVoiture.php",
-              method:"POST",
-              data:{search:txt},
-              dataType:"text",
-              success:function(data)
+              url     : "rechercheVoiture.php",
+              method  : "POST",
+              data    : {search:txt},
+              dataType: "text",
+              success : function(data)
               {
                 $('#result').html(data);
               }
@@ -18,11 +18,11 @@ $(document).ready(function(){
       {
         $('#result').html('');
         $.ajax({
-              url:"rechercheVoiture.php",
-              method:"POST",
-              data:{search:txt},
-              dataType:"text",
-              success:function(data)
+              url     : "rechercheVoiture.php",
+              method  : "POST",
+              data    : {search:txt},
+              dataType: "text",
+              success : function(data)
               {
                 $('#result').html(data);
               }

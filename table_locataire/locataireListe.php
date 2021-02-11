@@ -38,15 +38,15 @@
                                         <form action="../traitement/locataire_post.php" method="POST">
                                             <div class="mb-2">
                                                 <label for="#" class="form-label">Identifiant locataire</label>
-                                                <input type="text" class="form-control" id="#" name="Locataire">
+                                                <input type="text" class="form-control" id="#" name="Locataire" autocomplete="off">
                                             </div>
                                             <div class="mb-2">
                                                 <label for="#" class="form-label">Nom</label>
-                                                <input type="text" class="form-control" id="#" name="Nom">
+                                                <input type="text" class="form-control" id="#" name="Nom" autocomplete="off">
                                             </div>
                                             <div class="mb-2">
                                                 <label for="#" class="form-label">Adresse</label>
-                                                <input type="text" class="form-control" id="#" name="Adresse">
+                                                <input type="text" class="form-control" id="#" name="Adresse" autocomplete="off">
                                             </div>
 
                                             <div class="d-grid gap-2 mt-4">
@@ -59,7 +59,6 @@
                                 </div>
                             </div>
                         </div>
-
 
 
                 </article>
@@ -102,7 +101,7 @@
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                                 data-bs-target="#modalLocataire"
-                                                onclick="updateData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Nom']; ?>' , '<?php echo $donnees['Adresse']; ?>')"><img
+                                                onclick="updateData('<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Nom']; ?>' , '<?php echo $donnees['Adresse']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
                                             <button type="button" class="btn btn-secondary"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
@@ -128,7 +127,8 @@
 <?php include("../modal/modalLocataire.php"); ?>
 
 <script type="text/javascript">
-    function updateData(Locataire, Nom, Adresse) {
+    function updateData(ID_Locataire, Locataire, Nom, Adresse) {
+        document.getElementById('inputID').value = ID_Locataire;
         document.getElementById('inputLocataire').value = Locataire;
         document.getElementById('inputNom').value = Nom;
         document.getElementById('inputAdresse').value = Adresse;

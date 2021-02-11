@@ -78,7 +78,7 @@
                             </div>
                             <div class="mb-2">
                                 <label for="#" class="form-label">Nombre de jour</label>
-                                <input type="number" class="form-control" id="#" name="nb_Jour">
+                                <input type="number" class="form-control" id="#" name="nb_Jour" autocomplete="off" min="1" placeholder="1">
                             </div>
                             <div class="mb-2">
                                 <label for="#" class="form-label">Date de location</label>

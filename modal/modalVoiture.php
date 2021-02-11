@@ -6,7 +6,11 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="#" method="POST">
+                <form action="../traitement/modifVoiture.php" method="POST">
+                <div class="mb-2">
+                        <label for="inputID" class="form-label">Identification voiture</label>
+                        <input type="text" class="form-control" id="inputID" name="ID_Voiture" readonly>
+                    </div>
                     <div class="mb-2">
                         <label for="inputVoiture" class="form-label">Identification voiture</label>
                         <input type="text" class="form-control" id="inputVoiture" name="Voiture">
@@ -21,7 +25,7 @@
                     </div>
 
                     <div class="d-grid gap-2 mt-4">
-                        <button type="submit" class="btn btn-primary" id="btnSubmit">Valider</button>
+                        <button type="submit" class="btn btn-primary" id="btnSubmit" name="modifier">Valider</button>
                     </div>
                     <div class="d-grid gap-2 mt-4">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
