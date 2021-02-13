@@ -26,6 +26,10 @@ h4 {
     font-size: 22px;
 }
 
+button {
+    outline: none;
+}
+
 table thead th{
     font-family: 'Open Sans';
     font-size: 17px;
@@ -60,7 +64,7 @@ table thead th{
 }
 
 .formulaire {
-    color: white;
+    /*color: white;*/
     padding-top: 3%;
     padding-bottom: 10%;
 }

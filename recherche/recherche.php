@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light mb-2">
     <div class="container-fluid">
         <a class="navbar-brand"></a>
         <form class="d-flex" method="POST">
@@ -6,4 +6,4 @@
             <button class="btn btn-outline-success" type="submit">Rechercher</button>
         </form>
     </div>
-</nav></br>
+</nav>

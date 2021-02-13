@@ -20,8 +20,9 @@
                 <article class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
                 <h4><a href="#">Effectif et Montant total des locations par voiture</a></h4>
                     <?php include("../recherche/recherche.php"); ?>
+                    <?php include("../recherche/rechercheDate.php"); ?>
                     <!-- Tableau -->
-                    <table class="table table-hover table-dark table-striped" id="result">
+                    <table class="table table-hover table-light table-striped" id="result">
                         <thead>
                             <tr>
                                 <th scope="col">Voiture</th>
@@ -39,8 +40,22 @@
                                     (CONCAT(Voiture, ' ', table_louer.ID_Voiture) LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%') GROUP BY table_louer.ID_Voiture";
                             }else{
                                 $sql = "SELECT *, COUNT(table_louer.ID_Locataire) AS Effectif, SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) GROUP BY table_louer.ID_Voiture";
-                            }
+                            } ?>
 
+                            <?php
+                            if (isset($_POST['searchDebut']) || isset($_POST['searchFin'])) {
+                                $searchkeyDebut = $_POST['searchDebut'];
+                                $searchkeyFin = $_POST['searchFin'];
+                                $sql = "SELECT *, COUNT(table_louer.ID_Locataire) AS Effectif, SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer 
+                                    WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
+                                    (Date_Location BETWEEN '$searchkeyDebut' AND '$searchkeyFin') GROUP BY table_louer.ID_Voiture";                                
+                               
+                                 }else{
+                                    $sql = "SELECT *, COUNT(table_louer.ID_Locataire) AS Effectif, SUM(Loyer*NbJour) AS Total FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) GROUP BY table_louer.ID_Voiture";
+
+                                } ?>
+
+                            <?php
                             $reponse = $bdd->query($sql);
 
                                 while ($donnees = $reponse->fetch())

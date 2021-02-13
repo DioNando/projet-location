@@ -27,14 +27,14 @@
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#flush-collapseOne" aria-expanded="false"
                                     aria-controls="flush-collapseOne">
-                                    <h4><a href="#">Nouveau</a></h4>
+                                    <h4><a href="#" class="align-middle">Nouveau</a></h4>
                                 </button>
                             </h2>
                             <div id="flush-collapseOne" class="accordion-collapse collapse"
                                 aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushLocataire">
                                 <div class="accordion-body">
 
-                                    <div class="container-fluid bg-dark formulaire">
+                                    <div class="container-fluid bg-light formulaire">
                                         <form action="../traitement/locataire_post.php" method="POST">
                                             <div class="mb-2">
                                                 <label for="#" class="form-label">Identifiant locataire</label>
@@ -66,7 +66,7 @@
                 <article class="col-md-8 col-lg-8 col-xs-12 col-sm-12">
                     <h4><a href="#">Liste des locataires</a></h4>
                     <?php include("../recherche/recherche.php"); ?>
-                    <table class="table table-hover table-dark table-striped" id="result">
+                    <table class="table table-hover table-light table-striped" id="result">
                         <thead>
                             <tr>
                                 <th scope="col">Identifiant</th>

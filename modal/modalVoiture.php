@@ -21,7 +21,7 @@
                     </div>
                     <div class="mb-2">
                         <label for="inputLoyer" class="form-label">Loyer journalier</label>
-                        <input type="number" class="form-control" id="inputLoyer" name="Loyer_Journalier">
+                        <input type="number" class="form-control" id="inputLoyer" name="Loyer_Journalier" min="1">
                     </div>
 
                     <div class="d-grid gap-2 mt-4">

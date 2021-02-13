@@ -25,60 +25,43 @@
                     <h2 class="accordion-header bg-light" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                            <h4><a href="#">Nouveau</a></h4>
+                            <h4><a href="#" class="align-middle">Nouveau</a></h4>
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
                         data-bs-parent="#accordionFlushLouer">
                         <div class="accordion-body">
 
-                        <div class="container-fluid bg-dark formulaire">
+                        <div class="container-fluid bg-light formulaire">
                         <form action="../traitement/louer_post.php" method="POST">
                             
                             <div class="mb-2">
                             <label for="#" class="form-label">Identifiant locataire</label>
-                            <select class="form-select" aria-label="Default select example" name="ID_Locataire">
+                            <div class="row">
+                            <div class="col-6">
+                            <input type="text" class="form-control" id="#" name="Locataire" autocomplete="off" required>
+                            </div>
+                            <div class="col-6">
+                            <input type="number" class="form-control" id="#" name="ID_Locataire" autocomplete="off" min="1" required>
+                            </div>
 
-                            <?php 
-
-                            $reponse = $bdd->query('SELECT * FROM table_locataire ORDER BY ID_Locataire DESC LIMIT 10');
-
-                                while ($donnees = $reponse->fetch())
-                                {
-                                ?>
-                                    <option value="<?php echo $donnees['ID_Locataire'] ?>"> <?php echo htmlspecialchars($donnees['Locataire']) . ' ' . htmlspecialchars($donnees['ID_Locataire']); ?> </option>
-                                <?php
-                                }
-
-                                $reponse->closeCursor();
-                            ?>
-                                
-                            </select>
+                           </div>
                             </div>
 
                             <div class="mb-2">
                                 <label for="#" class="form-label">Identification voiture</label>
-                                <select class="form-select" aria-label="Default select example" name="ID_Voiture">
+                                <div class="row">
+                            <div class="col-6">
+                            <input type="text" class="form-control" id="#" name="Voiture" autocomplete="off" required>
+                            </div>
+                            <div class="col-6">
+                            <input type="number" class="form-control" id="#" name="ID_Voiture" autocomplete="off" min="1" required>
+                            </div>
 
-                            <?php 
-
-                            $reponse = $bdd->query('SELECT * FROM table_voiture');
-
-                                while ($donnees = $reponse->fetch())
-                                {
-                                ?>
-                                    <option value="<?php echo $donnees['ID_Voiture'] ?>"> <?php echo htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']); ?> </option>
-                                <?php
-                                }
-
-                                $reponse->closeCursor();
-                            ?>
-                                
-                            </select>
                             </div>
                             <div class="mb-2">
                                 <label for="#" class="form-label">Nombre de jour</label>
-                                <input type="number" class="form-control" id="#" name="nb_Jour" autocomplete="off" min="1" placeholder="1">
+                                <input type="number" class="form-control" id="#" name="nb_Jour" autocomplete="off" min="1" value="1">
                             </div>
                             <div class="mb-2">
                                 <label for="#" class="form-label">Date de location</label>
@@ -108,7 +91,7 @@
                     <h4><a href="#">Liste des locations</a></h4>
                     <?php include("../recherche/recherche.php"); ?>
                     <!-- Tableau -->
-                    <table class="table table-hover table-dark table-striped" id="result">
+                    <table class="table table-hover table-light table-striped" id="result">
                         <thead>
                             <tr>
                                 <th scope="col">Locataire</th>
@@ -127,7 +110,7 @@
                                     WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
                                     (CONCAT(Locataire, ' ',table_louer.ID_Locataire) LIKE '%$searchkey%' OR CONCAT(Voiture, ' ', table_louer.ID_Voiture) LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%')";
                             }else{
-                                $sql = "SELECT * FROM table_locataire, table_voiture, table_louer WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture)";
+                                $sql = "SELECT * FROM table_louer";
                             }
 
                             $reponse = $bdd->query($sql);
@@ -137,15 +120,15 @@
                                 {
                             ?>
                                     <tr>
-                                    <th scope="row"> <?php echo htmlspecialchars($donnees['Locataire']) . ' ' . htmlspecialchars($donnees['ID_Locataire']) ?> </th>
-                                    <th scope="row"> <?php echo htmlspecialchars($donnees['Voiture']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) ?> </th>
+                                    <th scope="row"> <?php echo htmlspecialchars($donnees['LocataireLouer']) . ' ' . htmlspecialchars($donnees['ID_Locataire']) ?> </th>
+                                    <th scope="row"> <?php echo htmlspecialchars($donnees['VoitureLouer']) . ' ' . htmlspecialchars($donnees['ID_Voiture']) ?> </th>
                                     <td> <?php echo htmlspecialchars($donnees['NbJour']) ?></td>  
                                     <td> <?php echo htmlspecialchars($donnees['Date_Location']) ?> </td>
                                     <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#modalLouer" onclick="updateData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
+                                                data-bs-target="#modalLouer" onclick="updateData('<?php echo $donnees['LocataireLouer']; ?>' , '<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['VoitureLouer']; ?>' , '<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
                                             <button type="button" class="btn btn-secondary"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
@@ -173,10 +156,12 @@
 <?php include("../modal/modalLouer.php"); ?>
 
 <script type="text/javascript">
-    function updateData(Locataire, Voiture, NbJour, Date_Location)
+    function updateData(Locataire, ID_Locataire, Voiture, ID_Voiture, NbJour, Date_Location)
     {
         document.getElementById('inputLocataire').value = Locataire;
+        document.getElementById('inputID_Locataire').value = ID_Locataire;
         document.getElementById('inputVoiture').value = Voiture;
+        document.getElementById('inputID_Voiture').value = ID_Voiture;
         document.getElementById('inputNbJour').value = NbJour;
         document.getElementById('inputDate').value = Date_Location;
         document.getElementById('btnSubmit').value = "Valider";
