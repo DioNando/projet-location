@@ -1,6 +1,6 @@
 <header>
 
-<footer class="container-fluid footer">
+<div class="container-fluid headerAccueil">
     <center>
         <h3>Gestion des locations des voitures</h3>
     
@@ -26,7 +26,7 @@
     
     </center>
 
-</footer>
+</div>
 
 
     <div class="container-fluid header">

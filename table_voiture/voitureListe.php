@@ -33,15 +33,15 @@
                         <form action="../traitement/voiture_post.php" method="POST">
                             <div class="mb-2">
                                 <label for="#" class="form-label">Identification voiture</label>
-                                <input type="text" class="form-control" id="#" name="Voiture" autocomplete="off">
+                                <input type="text" class="form-control" id="#" name="Voiture" autocomplete="off" required>
                             </div>
                             <div class="mb-2">
                                 <label for="#" class="form-label">Désignation</label>
-                                <input type="text" class="form-control" id="#" name="Designation" autocomplete="off">
+                                <input type="text" class="form-control" id="#" name="Designation" autocomplete="off" required>
                             </div>
                             <div class="mb-2">
                                 <label for="#" class="form-label">Loyer journalier</label>
-                                <input type="number" class="form-control" id="#" name="Loyer_Journalier" autocomplete="off" min="0">
+                                <input type="number" class="form-control" id="#" name="Loyer_Journalier" autocomplete="off" min="0" required>
                             </div>
 
                             <div class="d-grid gap-2 mt-4">
@@ -96,10 +96,10 @@
                                     <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                            <button type="button" class="btn btn-secondary"  data-bs-toggle="modal"
+                                            <button type="button" class="btn btn-secondary eraser"  data-bs-toggle="modal"
                                                 data-bs-target="#modalVoitureDelete" onclick="deleteData('<?php echo $donnees['ID_Voiture']; ?>')"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>

@@ -1,4 +1,6 @@
-<footer class="container-fluid footer">
+<footer class="container">
+
+<div class="container-fluid footer">
     <center>
         <h3>Gestion des locations des voitures</h3>
     
@@ -19,11 +21,13 @@
                 
             </article>
         </div>
-        <div class="progress">
+        <!--<div class="progress">
   <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
 </div>
-    </div>
+    </div>-->
     
     </center>
+
+</div>
 
 </footer>

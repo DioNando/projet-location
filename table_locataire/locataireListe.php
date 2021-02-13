@@ -38,15 +38,15 @@
                                         <form action="../traitement/locataire_post.php" method="POST">
                                             <div class="mb-2">
                                                 <label for="#" class="form-label">Identifiant locataire</label>
-                                                <input type="text" class="form-control" id="#" name="Locataire" autocomplete="off">
+                                                <input type="text" class="form-control" id="#" name="Locataire" autocomplete="off" required>
                                             </div>
                                             <div class="mb-2">
                                                 <label for="#" class="form-label">Nom</label>
-                                                <input type="text" class="form-control" id="#" name="Nom" autocomplete="off">
+                                                <input type="text" class="form-control" id="#" name="Nom" autocomplete="off" required>
                                             </div>
                                             <div class="mb-2">
                                                 <label for="#" class="form-label">Adresse</label>
-                                                <input type="text" class="form-control" id="#" name="Adresse" autocomplete="off">
+                                                <input type="text" class="form-control" id="#" name="Adresse" autocomplete="off" required>
                                             </div>
 
                                             <div class="d-grid gap-2 mt-4">
@@ -99,11 +99,11 @@
                                 <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalLocataire"
                                                 onclick="updateData('<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Nom']; ?>' , '<?php echo $donnees['Adresse']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
+                                            <button type="button" class="btn btn-secondary eraser"><img
                                                     src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>

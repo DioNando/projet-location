@@ -1,5 +1,9 @@
 @charset "UTF-8";
-/* #090C0D */
+/* #0E3854 Bleu marine */
+/* #067EED Bleu */
+/* #FF7C1F Orange */
+/* #C1E6FF Bleu ciel */
+/* #FFFFFF Blanc */
 
 /* header */
 
@@ -15,19 +19,32 @@
 
 body {
     font-family: 'Open Sans';
+    background-image: url("images/blue.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
 }
 
 a {
     text-decoration: none;
+    color: #067EED;
+}
+
+a:hover {
+    color: #03477e;
+}
+
+button {
+    outline: none;
+}
+
+h3 {
+    color: #FF7C1F;
+    font-size: 32px;
 }
 
 h4 {
     font-family: 'Oswald';
     font-size: 22px;
-}
-
-button {
-    outline: none;
 }
 
 table thead th{
@@ -36,8 +53,15 @@ table thead th{
     text-align: center;
 }
 
+.headerAccueil {
+    background-color:#C1E6FF;
+    font-family: 'Oswald';
+    font-size: 22px;
+    padding-top: 5px;
+}
+
 .header {
-    background-color:#0585EB;
+    background-color:#067EED;
     font-family: 'Oswald';
     font-size: 22px;
 }
@@ -46,12 +70,16 @@ table thead th{
     color: white;
 }
 
+.header ul li a:hover {
+    color: #FF7C1F;
+}
+
 .nav-item a {
     color: #ffffff;
 }
 
 .nav-item a:hover {
-    color: #090C0D;
+    color: #c4c4c4;
 }
 
 .main {
@@ -70,7 +98,7 @@ table thead th{
 }
 
 footer {
-    background-color:#090C0D;
+    background-color:#03477e;
     color: #ffffff;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -83,10 +111,76 @@ h5 {
 }
 
 footer a {
-    color: #0585EB;
+    color: #ffffff;
 }
 
 footer a:hover {
+    color: #FF7C1F;
+}
+
+.accordion-button:focus {
+    border: none;
+    background-color: #C1E6FF;
+    box-shadow: none;
+}
+
+.btn:focus {
+    box-shadow: none;
+}
+
+.btn-primary {
+    background-color: #067EED;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #03477e;
+}
+
+.btn-primary:focus {
+    background-color: #03477e;
+}
+
+.pencil {
+    background-color: #C1E6FF;
+    border: none;
+}
+
+.pencil:hover {
+    background-color: #70c5fd;
+}
+
+.pencil:focus {
+    background-color: #70c5fd;
+}
+
+.eraser {
+    border: none;
+    background-color: #e0e0e0;
+}
+
+.eraser:hover {
+    background-color: #b4b4b4;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 1px solid #C1E6FF;
+}
+
+.btn-outline-success {
+    color: #FF7C1F;
+    border-color: #FF7C1F;
+}
+
+.btn-outline-success:hover {
     color: #ffffff;
+    background-color: #FF7C1F;
+    border-color: transparent;
+}
+
+.table thead tr th{
+    color: #03477e;
+    background-color: #C1E6FF;
 }
 
