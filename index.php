@@ -6,15 +6,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="icons/favicon.png" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Gestion des locations</title>
+    <style>
+        body {
+            background-image: url("images/background1.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
     <?php include("header.php"); ?>
-
-
 
     <div class="container-fluid">
         <div class="container main">
@@ -50,35 +57,50 @@
 
 
             <!--TEST-->
+            <center>
+                <div class="row mt-3 mb-3">
+                    <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/car1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Ford Raptor</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <!--<a href="#" class="btn btn-primary">Consulter</a>-->
+                            </div>
+                        </div>
+                    </article>
 
-            <div class="row">
-                <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                    <h4><a href="#">Titre 1</a></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore non nesciunt nam dignissimos
-                        officiis rem aspernatur esse nostrum aperiam dicta beatae dolores, libero veniam, dolorum iste
-                        dolor necessitatibus, doloribus ut.
-                    </p>
-                </article>
+                    <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/car2.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Tesla modele X</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <!--<a href="#" class="btn btn-primary">Consulter</a>-->
+                            </div>
+                        </div>
+                    </article>
 
-                <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                    <h4><a href="#">Titre 2</a></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore non nesciunt nam dignissimos
-                        officiis rem aspernatur esse nostrum aperiam dicta beatae dolores, libero veniam, dolorum iste
-                        dolor necessitatibus, doloribus ut.
-                    </p>
-                </article>
+                    <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/car3.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Jeep</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                                <!--<a href="#" class="btn btn-primary">Consulter</a>-->
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
-                <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
-                    <h4><a href="#">Titre 3</a></h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore non nesciunt nam dignissimos
-                        officiis rem aspernatur esse nostrum aperiam dicta beatae dolores, libero veniam, dolorum iste
-                        dolor necessitatibus, doloribus ut.
-                    </p>
-                </article>
-            </div>
+            </center>
+
 
             <div class="container">
                 <div class="row g-2">

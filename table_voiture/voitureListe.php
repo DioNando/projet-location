@@ -6,9 +6,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../icons/favicon.png"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Voitures</title>
+    <style>
+        body {
+            background-image: url("../images/background3.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -99,9 +108,8 @@
                                             <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                            <button type="button" class="btn btn-secondary eraser"  data-bs-toggle="modal"
-                                                data-bs-target="#modalVoitureDelete" onclick="deleteData('<?php echo $donnees['ID_Voiture']; ?>')"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></button>
+                                            <a type="button" class="btn btn-secondary eraser" href="deleteData.php?ID_Voiture=<?php echo $donnees['ID_Voiture']; ?>"><img
+                                                    src="../icons/eraser-fill.svg" alt=""></a>
                                         </div>
                                     </center>
                                 </td>

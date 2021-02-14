@@ -6,14 +6,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../icons/favicon.png"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Louer</title>
+    <style>
+        body {
+            background-image: url("../images/background4.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
     <?php include("header.php"); ?>
-
+  
     <div class="container-fluid">
         <div class="container main">
             <div class="row">
@@ -266,8 +275,8 @@
                                                 data-bs-target="#modalLouer"
                                                 onclick="updateData('<?php echo $donnees['LocataireLouer']; ?>' , '<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['VoitureLouer']; ?>' , '<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                            <button type="button" class="btn btn-secondary eraser"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></button>
+                                                    <a type="button" class="btn btn-secondary eraser" href="deleteData.php?ID_Locataire=<?php echo $donnees['ID_Locataire']; ?>"><img
+                                                    src="../icons/eraser-fill.svg" alt=""></a>
                                         </div>
                                     </center>
                                 </td>

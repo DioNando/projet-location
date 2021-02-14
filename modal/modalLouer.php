@@ -15,7 +15,7 @@
                             <input type="text" class="form-control" id="inputLocataire" name="Locataire">                    
                             </div>
                             <div class="col-6">                            
-                            <input type="text" class="form-control" id="inputID_Locataire" name="ID_Locataire">
+                            <input type="number" class="form-control" id="inputID_Locataire" name="ID_Locataire" min="1">
                             </div>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                             </div>
 
                             <div class="col-6">
-                        <input type="text" class="form-control" id="inputID_Voiture" name="ID_Voiture">
+                        <input type="number" class="form-control" id="inputID_Voiture" name="ID_Voiture" min="1">
                             </div>
                         </div>
                     </div>

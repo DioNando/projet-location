@@ -6,10 +6,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="../icons/favicon.png"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/styleModal.css">
     <title>Locataires</title>
+    <style>
+        body {
+            background-image: url("../images/background.png");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </head>
 
 <body>
@@ -103,8 +112,8 @@
                                                 data-bs-target="#modalLocataire"
                                                 onclick="updateData('<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Nom']; ?>' , '<?php echo $donnees['Adresse']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                            <button type="button" class="btn btn-secondary eraser"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></button>
+                                                    <a type="button" class="btn btn-secondary eraser" href="deleteData.php?ID_Locataire=<?php echo $donnees['ID_Locataire']; ?>"><img
+                                                    src="../icons/eraser-fill.svg" alt=""></a>
                                         </div>
                                     </center>
                                 </td>
