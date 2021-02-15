@@ -51,6 +51,12 @@ table thead th{
     text-align: center;
 }
 
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .headerAccueil {
     /*background-color:#C1E6FF;*/
     font-family: 'Oswald';

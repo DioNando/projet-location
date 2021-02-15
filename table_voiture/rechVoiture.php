@@ -28,7 +28,7 @@
                                     <td> <?php echo htmlspecialchars($donnees['Designation']); ?> </td>  
                                     <td> <?php echo htmlspecialchars($donnees['Loyer']);  ?> </td> 
                                     <td>
-                                    <center>
+                                    <div class="center">
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
@@ -37,7 +37,7 @@
                                                 data-bs-target="#modalVoitureDelete"
                                                 onclick="deleteData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['ID_Voiture']; ?>')" ><img src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
-                                    </center>
+                                    </div>
                                 </td>
                                 </tr>
                             <?php    

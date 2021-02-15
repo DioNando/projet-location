@@ -1,9 +1,9 @@
 <footer class="container">
 
 <div class="container-fluid footer">
-    <center>
+    <div class="center">
         <h3>Gestion des locations des voitures</h3>
-    
+    </div>
     <div class="container">
         <div class="row">   
             <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
@@ -22,7 +22,7 @@
             </article>
         </div>
         
-    </center>
+    
 
 </div>
 

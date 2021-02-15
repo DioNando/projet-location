@@ -1,8 +1,8 @@
 <header>
 
 <div class="container-fluid headerAccueil">
-    <center>
-        <h3>Gestion des locations des voitures</h3>
+    <div class="center">
+    <h3>Gestion des locations des voitures</h3>
     
     <div class="container">
         <div class="row">   
@@ -24,7 +24,10 @@
     
     </div>
     
-    </center>
+    </div>
+    
+    
+    
 
 </div>
 

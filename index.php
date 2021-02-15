@@ -18,10 +18,6 @@
             background-attachment: fixed;
             background-size: cover;
         }
-
-        header {
-            
-        }
     </style>
 </head>
 
@@ -62,7 +58,7 @@
 
 
             <!--TEST-->
-            <center>
+            <div class="center">
                 <div class="row mt-3 mb-3">
                     <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
                         <div class="card" style="width: 18rem;">
@@ -104,7 +100,7 @@
                     </article>
                 </div>
 
-            </center>
+            </div>
 
 
             <div class="container">

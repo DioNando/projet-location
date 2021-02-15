@@ -1,8 +1,7 @@
 <footer class="container">
 
 <div class="container-fluid footer">
-    <center>
-        <h3>Gestion des locations des voitures</h3>
+    <div class="center">
     
     <div class="container">
         <div class="row">   
@@ -22,7 +21,8 @@
             </article>
         </div>
         
-    </center>
+    </div>
+        <h3>Gestion des locations des voitures</h3>
 
 </div>
 

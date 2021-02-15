@@ -29,7 +29,7 @@
                                 <td> <?php echo htmlspecialchars($donnees['Nom']); ?> </td>
                                 <td> <?php echo htmlspecialchars($donnees['Adresse']); ?> </td>
                                 <td>
-                                    <center>
+                                    <div class="center">
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalLocataire"
@@ -39,7 +39,7 @@
                                                 data-bs-target="#modalLocataireDelete"
                                                 onclick="deleteData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['ID_Locataire']; ?>')" ><img src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
-                                    </center>
+                                    </div>
                                 </td>
                             </tr>
                             <?php 
