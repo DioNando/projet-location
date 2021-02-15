@@ -12,7 +12,7 @@
     <title>Location</title>
     <style>
         body {
-            background-image: url("../images/background3.png");
+            background-image: url("../images/background1.png");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -30,6 +30,10 @@
                 <h4><a href="#">Liste des locataires</a></h4>    
                     <?php include("../recherche/recherche.php"); ?>                    
                     <?php include("../recherche/rechercheDate.php"); ?>
+
+                    <div class="col-lg-6 col-5 text-right">
+              
+            </div>
                     <!-- Tableau -->
                     <table class="table table-hover table-light table-striped" id="result">
                         <thead>
@@ -104,8 +108,16 @@
 
                 
             </div>
+
+            <a href="locpdf.php" class="btn btn-primary exportation">Exportation PDF</a>
+
+            
         </div>
+        
+
     </div>
+
+    
 
     <?php include("footer.php"); ?>
 

@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../icons/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../icons/favicon.png" />
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Location par voiture</title>
@@ -17,6 +17,11 @@
             background-attachment: fixed;
             background-size: cover;
         }
+
+        #histogramme {
+            width: 100%;
+        }
+
     </style>
 </head>
 
@@ -27,16 +32,18 @@
         <div class="container main">
             <div class="row">
                 <article class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
-                <h4><a href="#">Effectif et Montant total des locations par voiture</a></h4>
+                    <h4><a href="#">Effectif et Montant total des locations par voiture</a></h4>
                     <?php include("../recherche/recherche.php"); ?>
                     <?php include("../recherche/rechercheDate.php"); ?>
+
+
                     <!-- Tableau -->
                     <table class="table table-hover table-light table-striped" id="result">
                         <thead>
                             <tr>
                                 <th scope="col">Voiture</th>
                                 <th scope="col">Effectif</th>
-                                <th scope="col">Montant</th>                                
+                                <th scope="col">Montant</th>
                             </tr>
                         </thead>
                         <tbody class="align-middle">
@@ -78,15 +85,22 @@
                                
                                 $reponse->closeCursor();
                             ?>
-                            
+
                         </tbody>
                     </table>
                 </article>
 
-               
+
             </div>
+            <a href="voitpdf.php" class="btn btn-primary exportation">Exportation PDF</a>
+
+            <div class="mt-3">
+                <center><img src="histogramme.php" id="histogramme"></center>
+            </div>
+
         </div>
     </div>
+
 
     <?php include("footer.php"); ?>
 

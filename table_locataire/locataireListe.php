@@ -111,9 +111,10 @@
                                             <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalLocataire"
                                                 onclick="updateData('<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Nom']; ?>' , '<?php echo $donnees['Adresse']; ?>')"><img
-                                                    src="../icons/pencil-fill.svg" alt=""></button>
-                                                    <a type="button" class="btn btn-secondary eraser" href="deleteData.php?ID_Locataire=<?php echo $donnees['ID_Locataire']; ?>"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></a>
+                                                    src="../icons/pencil-fill.svg" alt=""></button>                                                    
+                                                    <button type="button" class="btn btn-secondary eraser" data-bs-toggle="modal"
+                                                data-bs-target="#modalLocataireDelete"
+                                                onclick="deleteData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['ID_Locataire']; ?>')" ><img src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
                                 </td>
@@ -130,6 +131,7 @@
             </div>
         </div>
     </div>
+    <?php include("footer.php"); ?>
 
 </body>
 
@@ -142,6 +144,13 @@
         document.getElementById('inputNom').value = Nom;
         document.getElementById('inputAdresse').value = Adresse;
         document.getElementById('btnSubmit').value = "Valider";
+    }
+
+    function deleteData(Locataire, ID_Locataire) {
+        document.getElementById('innerLocDel').innerHTML = Locataire;
+        document.getElementById('innerIDdel').innerHTML = ID_Locataire;
+        document.getElementById('inputIDdel').value = ID_Locataire;
+        document.getElementById('btnDelete').value = "Effacer";
     }
 </script>
 

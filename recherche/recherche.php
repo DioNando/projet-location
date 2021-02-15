@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand"></a>
         <form class="d-flex" method="POST">
-            <input class="form-control me-2" type="search" name="search" id="search" placeholder=".   .   ." aria-label="Search">
+            <input class="form-control me-2" type="search" name="search" id="search" placeholder=".   .   ." aria-label="Search0" autocomplete="off">
             <button class="btn btn-outline-success" type="submit">Rechercher</button>
         </form>
     </div>

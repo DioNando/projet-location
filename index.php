@@ -12,10 +12,15 @@
     <title>Gestion des locations</title>
     <style>
         body {
-            background-image: url("images/background1.png");
+            background-image: linear-gradient(180deg, #FFFFFF, #C1E6FF);
+            background-image: url("images/background4.png");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+        }
+
+        header {
+            
         }
     </style>
 </head>

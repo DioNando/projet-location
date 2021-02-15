@@ -28,7 +28,7 @@ a {
 }
 
 a:hover {
-    color: #03477e;
+    color: #4facf8;
 }
 
 button {
@@ -52,10 +52,12 @@ table thead th{
 }
 
 .headerAccueil {
-    background-color:#C1E6FF;
+    /*background-color:#C1E6FF;*/
     font-family: 'Oswald';
     font-size: 22px;
     padding-top: 5px;
+    background: rgba(54, 63, 70, 0.397);
+    backdrop-filter: blur(8px);
 }
 
 .header {
@@ -134,12 +136,25 @@ footer a:hover {
     border: none;
 }
 
+.btn-warning, .exportation {
+    background-color: #FF7C1F;
+    border: none;
+}
+
 .btn-primary:hover {
     background-color: #03477e;
 }
 
+.btn-warning:hover, .exportation:hover {
+    background-color: #dd6916;
+}
+
 .btn-primary:focus {
     background-color: #03477e;
+}
+
+.btn-warning:focus, .exportation:focus {
+    background-color: #dd6916;
 }
 
 .pencil {
@@ -196,4 +211,3 @@ footer a:hover {
     color: #03477e;
     background-color: #C1E6FF;
 }
-

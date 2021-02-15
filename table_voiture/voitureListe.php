@@ -108,8 +108,9 @@
                                             <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                            <a type="button" class="btn btn-secondary eraser" href="deleteData.php?ID_Voiture=<?php echo $donnees['ID_Voiture']; ?>"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></a>
+                                                    <button type="button" class="btn btn-secondary eraser" data-bs-toggle="modal"
+                                                data-bs-target="#modalVoitureDelete"
+                                                onclick="deleteData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['ID_Voiture']; ?>')" ><img src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
                                 </td>
@@ -125,7 +126,7 @@
             </div>
         </div>
     </div>
-
+    <?php include("footer.php"); ?>
 
 </body>
 
@@ -139,6 +140,13 @@
         document.getElementById('inputDesignation').value = Designation;
         document.getElementById('inputLoyer').value = Loyer;
         document.getElementById('btnSubmit').value = "Valider";
+    }
+
+    function deleteData(Voiture, ID_Voiture) {
+        document.getElementById('innerVoitDel').innerHTML = Voiture;
+        document.getElementById('innerIDdel').innerHTML = ID_Voiture;
+        document.getElementById('inputIDdel').value = ID_Voiture;
+        document.getElementById('btnDelete').value = "Effacer";
     }
 </script>
 

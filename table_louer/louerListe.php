@@ -273,10 +273,11 @@
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalLouer"
-                                                onclick="updateData('<?php echo $donnees['LocataireLouer']; ?>' , '<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['VoitureLouer']; ?>' , '<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
+                                                onclick="updateData('<?php echo $donnees['ID_Louer']; ?>' , '<?php echo $donnees['LocataireLouer']; ?>' , '<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['VoitureLouer']; ?>' , '<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['NbJour']; ?>' , '<?php echo $donnees['Date_Location']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                                    <a type="button" class="btn btn-secondary eraser" href="deleteData.php?ID_Locataire=<?php echo $donnees['ID_Locataire']; ?>"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></a>
+                                                    <button type="button" class="btn btn-secondary eraser" data-bs-toggle="modal"
+                                                data-bs-target="#modalVoitureDelete"
+                                                onclick="deleteData('<?php echo $donnees['ID_Louer']; ?>')" ><img src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
                                 </td>
@@ -293,7 +294,7 @@
             </div>
         </div>
     </div>
-
+    <?php include("footer.php"); ?>
 
 
 </body>
@@ -301,15 +302,20 @@
 <?php include("../modal/modalLouer.php"); ?>
 
 <script type="text/javascript">
-    function updateData(Locataire, ID_Locataire, Voiture, ID_Voiture, NbJour, Date_Location) {
-        document.getElementById('inputLocataire').value = Locataire;
+    function updateData(ID_Louer, Locataire, ID_Locataire, Voiture, ID_Voiture, NbJour, Date_Location) {
+        document.getElementById('inputID_Louer').value = ID_Louer;
+        document.getElementById('inputLocataire').value = Locataire;   
         document.getElementById('inputID_Locataire').value = ID_Locataire;
         document.getElementById('inputVoiture').value = Voiture;
         document.getElementById('inputID_Voiture').value = ID_Voiture;
         document.getElementById('inputNbJour').value = NbJour;
         document.getElementById('inputDate').value = Date_Location;
         document.getElementById('btnSubmit').value = "Valider";
+    }
 
+    function deleteData(ID_Louer) {
+        document.getElementById('inputIDdel').value = ID_Louer;
+        document.getElementById('btnDelete').value = "Effacer";
     }
 </script>
 

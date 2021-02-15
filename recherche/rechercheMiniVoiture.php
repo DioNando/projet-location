@@ -9,5 +9,5 @@
 </nav>-->
 
 <form class="d-flex mb-2" method="POST">
-    <input class="form-control" type="search" name="searchMiniVoiture" id="searchMiniVoiture" placeholder="Recherche..." aria-label="Search">
+    <input class="form-control" type="search" name="searchMiniVoiture" id="searchMiniVoiture" placeholder="Recherche..." aria-label="Search" autocomplete="off">
 </form>
