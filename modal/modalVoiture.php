@@ -27,7 +27,7 @@
                     <div class="d-grid gap-2 mt-4">
                         <button type="submit" class="btn btn-primary" id="btnSubmit" name="modifier">Valider</button>
                     </div>
-                    <div class="d-grid gap-2 mt-4">
+                    <div class="d-grid gap-2 mt-3">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     </div>
                 </form>
@@ -59,7 +59,7 @@
                         <button type="submit" class="btn btn-warning" id="btnDelete" name="effacer">Effacer</button>
                     </div>
                     
-                    <div class="d-grid gap-2 mt-4">
+                    <div class="d-grid gap-2 mt-3">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     </div>
                 </form>

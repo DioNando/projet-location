@@ -139,6 +139,7 @@ footer a:hover {
 .btn-warning, .exportation {
     background-color: #FF7C1F;
     border: none;
+    color: white;
 }
 
 .btn-primary:hover {
@@ -147,6 +148,7 @@ footer a:hover {
 
 .btn-warning:hover, .exportation:hover {
     background-color: #dd6916;
+    color: white;
 }
 
 .btn-primary:focus {

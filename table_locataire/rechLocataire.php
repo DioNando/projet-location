@@ -31,12 +31,13 @@
                                 <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
                                                 data-bs-target="#modalLocataire"
-                                                onclick="updateData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Nom']; ?>' , '<?php echo $donnees['Adresse']; ?>')"><img
-                                                    src="../icons/pencil-fill.svg" alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></button>
+                                                onclick="updateData('<?php echo $donnees['ID_Locataire']; ?>' , '<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['Nom']; ?>' , '<?php echo $donnees['Adresse']; ?>')"><img
+                                                    src="../icons/pencil-fill.svg" alt=""></button>                                                    
+                                                    <button type="button" class="btn btn-secondary eraser" data-bs-toggle="modal"
+                                                data-bs-target="#modalLocataireDelete"
+                                                onclick="deleteData('<?php echo $donnees['Locataire']; ?>' , '<?php echo $donnees['ID_Locataire']; ?>')" ><img src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
                                 </td>

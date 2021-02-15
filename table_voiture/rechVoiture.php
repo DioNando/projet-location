@@ -30,11 +30,12 @@
                                     <td>
                                     <center>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                                data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
+                                            <button type="button" class="btn btn-primary pencil" data-bs-toggle="modal"
+                                                data-bs-target="#modalVoiture" onclick="updateData('<?php echo $donnees['ID_Voiture']; ?>' , '<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['Designation']; ?>' , '<?php echo $donnees['Loyer']; ?>')"><img
                                                     src="../icons/pencil-fill.svg" alt=""></button>
-                                            <button type="button" class="btn btn-secondary"><img
-                                                    src="../icons/eraser-fill.svg" alt=""></button>
+                                                    <button type="button" class="btn btn-secondary eraser" data-bs-toggle="modal"
+                                                data-bs-target="#modalVoitureDelete"
+                                                onclick="deleteData('<?php echo $donnees['Voiture']; ?>' , '<?php echo $donnees['ID_Voiture']; ?>')" ><img src="../icons/eraser-fill.svg" alt=""></button>
                                         </div>
                                     </center>
                                 </td>

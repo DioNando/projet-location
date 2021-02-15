@@ -246,9 +246,8 @@
 
                             if (isset($_POST['search'])) {
                                 $searchkey = $_POST['search'];
-                                $sql = "SELECT * FROM table_locataire, table_voiture, table_louer 
-                                    WHERE (table_locataire.ID_Locataire = table_louer.ID_Locataire) AND (table_voiture.ID_Voiture = table_louer.ID_Voiture) AND
-                                    (CONCAT(Locataire, ' ',table_louer.ID_Locataire) LIKE '%$searchkey%' OR CONCAT(Voiture, ' ', table_louer.ID_Voiture) LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%')";
+                                $sql = "SELECT * FROM table_louer 
+                                    WHERE (CONCAT(LocataireLouer, ' ', ID_Locataire) LIKE '%$searchkey%' OR CONCAT(VoitureLouer, ' ', ID_Voiture) LIKE '%$searchkey%' OR NBJour LIKE '%$searchkey%' OR Date_Location LIKE '%$searchkey%')";
                             }else{
                                 $sql = "SELECT * FROM table_louer";
                             }

@@ -49,7 +49,7 @@
                     <div class="d-grid gap-2 mt-4">
                         <button type="submit" class="btn btn-primary" id="btnSubmit" name="modifier">Valider</button>
                     </div>
-                    <div class="d-grid gap-2 mt-4">
+                    <div class="d-grid gap-2 mt-3">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     </div>
                 </form>
@@ -71,7 +71,7 @@
             <div class="modal-body">
                 <p>Voulez-vous vraiment supprimer cette ligne ?</p>
                 <form action="../traitement/suppLouer.php" method="POST">
-                    <div class="mb-2">
+                    <div class="mb-2" style="display: none;">
                         <label for="inputIDdel" class="form-label">ID</label>
                         <input type="text" class="form-control" id="inputIDdel" name="ID_Louer" readonly>
                     </div>
@@ -80,7 +80,7 @@
                         <button type="submit" class="btn btn-warning" id="btnDelete" name="effacer">Effacer</button>
                     </div>
                     
-                    <div class="d-grid gap-2 mt-4">
+                    <div class="d-grid gap-2 mt-3">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
                     </div>
                 </form>
