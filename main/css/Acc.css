@@ -1,0 +1,31 @@
+@font-face{
+    font-family: "OpenSansBold";
+    src: url(../Font/Open_Sans/OpenSans-Bold.ttf);
+}
+
+.welcome_top_container{
+    display: flex;
+    width: auto;
+
+    place-items: center;
+    margin-left: 5%;
+}
+
+.welcome_txt{
+    font-size: 35px;
+    font-family:'OpenSansBold';
+    margin-left: 2%;
+
+}
+
+.welcome_middle_container{
+    font-size: 25px;
+    margin-top: 3%;
+    margin-left: 8%;
+}
+
+@font-face{
+    font-family: "Ronded_elegance";
+    src: url(Font/rounded_elegance/Rounded_Elegance.ttf);
+}
+

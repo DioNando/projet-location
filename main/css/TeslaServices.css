@@ -1,0 +1,106 @@
+@font-face{
+    font-family: 'mount';
+    src: url(../font/mont/Mont-HeavyDEMO.otf);
+}
+
+.admin_choice_content{
+    margin-top: 4%;
+}
+
+.admin_choice{
+    margin-left: 8%;
+    display: flex;
+    width: 100%;
+}
+
+.admin_choice2{
+    margin-top: 2%;
+    margin-left: 22%;
+    display: flex;
+    width: 100%;
+}
+
+
+.white{
+    margin-left: 10px;
+    font-family: "mount";
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
+
+/* .gauche{
+    background-color: aquamarine;
+} */
+
+.parcours{
+    padding-top: 30px;
+    padding-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+}
+
+.parcours:hover{
+    border: 4px solid white;
+    transition: .5s;
+}
+
+.parcours_content2{
+    margin-top: 20px;
+}
+
+.flex{
+    display: flex;
+    place-items: center;
+
+}
+
+.parcours_locataire{
+    /* border: 4px solid #fbad4c; */
+    background-color: #fbad4c;
+    margin-left: 30px;
+    height: 140px;
+    width: 25%;
+    border-radius: 10px;
+    place-items: center;
+}
+
+.parcours_voiture{
+    background-color: #59d05d;
+    margin-left: 30px;
+    height: 140px;
+    width: 25%;
+    border-radius: 10px;
+    place-items: center;
+
+}
+
+.parcours_louer{
+    background-color: #ff646d;
+    margin-left: 30px;
+    height: 140px;
+    width: 25%;
+    border-radius: 10px;
+    place-items: center;
+
+}
+
+.liste_locataire{
+    background-color: #1d62f0;
+    margin-left: 30px;
+    height: 140px;
+    width: 25%;
+    border-radius: 10px;
+    place-items: center;
+
+}
+
+.location_voiture{
+    background-color: #cb48bc;
+    margin-left: 30px;
+    height: 140px;
+    width: 25%;
+    border-radius: 10px;
+    place-items: center;
+
+}
+

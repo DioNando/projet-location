@@ -1,0 +1,32 @@
+  $(document).ready(function(){
+    $('#searchMiniLocataire').keyup(function(){
+      var txt = $(this).val();
+      if (txt != '') 
+      {
+        $.ajax({
+              url:"rechMiniLocataire.php",
+              method:"POST",
+              data:{search:txt},
+              dataType:"text",
+              success:function(data)
+              {
+                $('#resultMiniLocataire').html(data);
+              }
+        });
+      }
+      else
+      {
+        $('#resultMiniLocataire').html('');
+        $.ajax({
+              url:"rechMiniLocataire.php",
+              method:"POST",
+              data:{search:txt},
+              dataType:"text",
+              success:function(data)
+              {
+                $('#resultMiniLocataire').html(data);
+              }
+        });
+      }
+      });
+  });

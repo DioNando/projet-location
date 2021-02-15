@@ -1,0 +1,32 @@
+  $(document).ready(function(){
+    $('#searchMiniVoiture').keyup(function(){
+      var txt = $(this).val();
+      if (txt != '') 
+      {
+        $.ajax({
+              url:"rechMiniVoiture.php",
+              method:"POST",
+              data:{search:txt},
+              dataType:"text",
+              success:function(data)
+              {
+                $('#resultMiniVoiture').html(data);
+              }
+        });
+      }
+      else
+      {
+        $('#resultMiniVoiture').html('');
+        $.ajax({
+              url:"rechMiniVoiture.php",
+              method:"POST",
+              data:{search:txt},
+              dataType:"text",
+              success:function(data)
+              {
+                $('#resultMiniVoiture').html(data);
+              }
+        });
+      }
+      });
+  });
