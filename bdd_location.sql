@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 15 fév. 2021 à 06:51
+-- Généré le : jeu. 18 fév. 2021 à 18:11
 -- Version du serveur :  8.0.21
 -- Version de PHP : 7.3.21
 
@@ -69,7 +69,9 @@ CREATE TABLE IF NOT EXISTS `table_louer` (
   `ID_Voiture` int NOT NULL,
   `NbJour` int NOT NULL,
   `Date_Location` date NOT NULL,
-  PRIMARY KEY (`ID_Louer`)
+  PRIMARY KEY (`ID_Louer`),
+  KEY `ID_Locataire` (`ID_Locataire`),
+  KEY `ID_Voiture` (`ID_Voiture`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
@@ -114,6 +116,17 @@ INSERT INTO `table_voiture` (`ID_Voiture`, `Voiture`, `Designation`, `Loyer`) VA
 (13, 'Voiture', 'Lamborghini', 7000),
 (14, 'Moto', 'Suzuki', 600),
 (15, 'Auto', 'Ford', 1950);
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `table_louer`
+--
+ALTER TABLE `table_louer`
+  ADD CONSTRAINT `table_louer_ibfk_1` FOREIGN KEY (`ID_Voiture`) REFERENCES `table_voiture` (`ID_Voiture`) ON DELETE CASCADE,
+  ADD CONSTRAINT `table_louer_ibfk_2` FOREIGN KEY (`ID_Locataire`) REFERENCES `table_locataire` (`ID_Locataire`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

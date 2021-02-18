@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../icons/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../icons/favicon.ico"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Voitures</title>
@@ -28,7 +28,7 @@
             <div class="row">
                 <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
 
-                <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion accordion-flush" id="accordionFlushVoiture">
                 <div class="accordion-item">
                     <h2 class="accordion-header bg-light" id="flush-headingOne">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -37,7 +37,7 @@
                         </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
-                        data-bs-parent="#accordionFlushExample">
+                        data-bs-parent="#accordionFlushVoiture">
                         <div class="accordion-body"><div class="container-fluid bg-light formulaire">
                         <form action="../traitement/voiture_post.php" method="POST">
                             <div class="mb-2">

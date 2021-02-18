@@ -6,14 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="icons/favicon.png" />
+    <link rel="shortcut icon" type="image/png" href="icons/favicon.ico" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Gestion des locations</title>
     <style>
         body {
             background-image: linear-gradient(180deg, #FFFFFF, #C1E6FF);
-            background-image: url("images/background4.png");
+            background-image: url("images/background1.png");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -102,25 +102,8 @@
 
             </div>
 
-
-            <div class="container">
-                <div class="row g-2">
-                    <div class="col-6">
-                        <div class="p-3 border bg-light">Custom column padding</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-3 border bg-light">Custom column padding</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-3 border bg-light">Custom column padding</div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-3 border bg-light">Custom column padding</div>
-                    </div>
-                </div>
-            </div>
-
-
+            <!-- TEST 2 -->
+            
         </div>
         <?php include("footer.php"); ?>
 

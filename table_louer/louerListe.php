@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/png" href="../icons/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../icons/favicon.ico"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Louer</title>
@@ -28,6 +28,11 @@
             <div class="row">
                 <!-- Formulaire -->
                 <article class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+
+                <!-- ACCORDION DEBUT -->
+                
+
+                <!-- ACCORDION FIN -->
 
                     <div class="accordion accordion-flush" id="accordionFlushLouer">
                         <div class="accordion-item">
@@ -105,7 +110,7 @@
                                 </button>
                             </h2>
                             <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushLouer">
                                 <div class="accordion-body">
                                 <?php include("../recherche/rechercheMiniLocataire.php"); ?>
                                     <div class="row">
@@ -167,7 +172,7 @@
                                 </button>
                             </h2>
                             <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushLouer">
                                 <div class="accordion-body">
                                 <?php include("../recherche/rechercheMiniVoiture.php"); ?>
                                     <div class="row">
